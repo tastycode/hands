@@ -2,13 +2,6 @@
 
 angular.module('handsApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }, {
-      'title': 'Settings',
-      'link': '/settings'
-    }];
     
     $scope.logout = function() {
       Auth.logout()
