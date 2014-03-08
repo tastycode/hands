@@ -1,0 +1,53 @@
+<div class="row">
+  <h1>New Task</h1>
+  <pre>{{task | json}}</pre>
+  <form ng-submit="createTask()">
+    <div class="full">
+      <label class="above-field">What do you need done?</label>
+      <input class="field" type="text" ng-model="task.title"/>
+      <p class="help-text">
+        e.g. Deliver old clothes to a shelter
+      </p>
+    </div>
+    <div class="full">
+      <label class="above-field">Is this a delivery or something else?</label>
+      <select class="field" ng-model="task.type">
+        <option value="delivery">Delivery</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="full">
+      <label class="above-field">What does the volunteer need to know?</label>
+      <textarea class="field" type="text" ng-model="task.details"></textarea>
+      <p class="help-text">
+        e.g. When you show up, enter 4545 to get past the gate. Ask for bob. 
+      </p>
+    </div>
+    <div ng-if="task.type==='delivery'">
+      <div class="full">
+        <label class="above-field">Pickup Location</label>
+        <input class="field" type="text" required ng-autocomplete details="autoCompletes.origin.details" options="autoOptions" ng-model="autoCompletes.origin.text">
+      </div>
+      <div class="full">
+        <label class="above-field">Dropoff Location</label>
+        <input class="field" type="text" required ng-autocomplete details="autoCompletes.dest.details" options="autoOptions" ng-model="autoCompletes.dest.text">
+      </div>
+    </div>
+    <div class="full" ng-if="task.type!=='delivery'">
+      <div class="full">
+        <label class="above-field">Where does this need to be done at?</label>
+        <input class="field" type="text" required ng-autocomplete details="autoCompletes.origin.details" options="{type: 'geocode'}" ng-model="autoCompletes.origin.text">
+      </div>
+    </div>
+    <div class="full">
+      <label class="above-field">When does this need to be done by?</label>
+      <select class="field-divided" ng-model="finishByDate" ng-options="o as o for o in dayOptions">
+      </select>
+      <select class="field-divided" ng-model="finishByTime" ng-options="o as o for o in timeOptions">
+      </select>
+    </div>
+    <div class="full">
+      <input type="submit" class="button button-submit" value="Request Task"/>
+    </div>
+  </form>
+</div>

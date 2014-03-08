@@ -48,12 +48,18 @@
     <![endif]-->
 
     <!-- build:js(app) scripts/vendor.js -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/ngAutocomplete/src/ngAutocomplete.js"></script>
+    <script src="bower_components/checklist-model/checklist-model.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -68,6 +74,9 @@
         <script src="scripts/services/session.js"></script>
         <script src="scripts/services/user.js"></script>
         <script src="scripts/directives/mongooseError.js"></script>
+        <script src="scripts/controllers/tasks.js"></script>
+        <script src="scripts/controllers/new_task.js"></script>
+        <script src="scripts/controllers/available_tasks.js"></script>
         <!-- endbuild -->
 </body>
 </html>

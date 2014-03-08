@@ -444,7 +444,6 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:server',
       'bower-install',
       'autoprefixer',
       'express:dev',

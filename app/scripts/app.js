@@ -4,7 +4,9 @@ angular.module('handsApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ngAutocomplete',
+  'checklist-model'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -23,6 +25,15 @@ angular.module('handsApp', [
       .when('/settings', {
         templateUrl: 'partials/settings',
         controller: 'SettingsCtrl',
+        authenticate: true
+      })
+      .when('/tasks/new', {
+        templateUrl: 'partials/tasks/new',
+        controller: 'NewTaskCtrl',
+        authenticate: true
+      })
+      .when('/home', {
+        templateUrl: 'partials/home.html',
         authenticate: true
       })
       .otherwise({

@@ -9,7 +9,8 @@
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
     "q": "~1.0.0",
-    "ejs": "~0.8.4"
+    "ejs": "~0.8.4",
+    "mongoose-timestamp": "~0.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

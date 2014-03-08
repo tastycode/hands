@@ -7,6 +7,12 @@ angular.module('handsApp')
     $rootScope.currentUser = $cookieStore.get('user') || null;
     $cookieStore.remove('user');
 
+    $rootScope.userIs = function(role) {
+      if (!$rootScope.currentUser)
+        return false;
+      return $rootScope.currentUser.roleTags.indexOf(role) > -1;
+    };
+
     return {
 
       /**
