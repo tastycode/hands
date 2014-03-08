@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('handsApp')
-  .controller('TasksCtrl', function ($scope, $http) {
+  .controller('TasksCtrl', function ($scope, $http, $location) {
     $scope.task = {};
 
     function loadTasks(options) {
@@ -22,6 +22,21 @@ angular.module('handsApp')
 
     $scope.createTask = function() {
       $http.post('/api/tasks', $scope.newTask).success(function(task) {
+        $scope.loadPostedTasks();
+      });
+    };
+
+    $scope.update = function(task) {
+      $location.path('/tasks/' + task._id + '/edit');
+    };
+    
+    $scope.view = function(task) {
+      $location.path('/tasks/' + task._id);
+    };
+
+    $scope.cancel = function(task) {
+      task.status = 'canceled';
+      $http.put('/api/tasks/' + task._id, task).success(function(task) {
         $scope.loadPostedTasks();
       });
     };

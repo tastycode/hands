@@ -32,6 +32,16 @@ angular.module('handsApp', [
         controller: 'NewTaskCtrl',
         authenticate: true
       })
+      .when('/tasks/:id', {
+        templateUrl: 'partials/tasks/show',
+        controller: 'ShowTaskCtrl',
+        authenticate: true
+      })
+      .when('/tasks/:id/edit', {
+        templateUrl: 'partials/tasks/edit',
+        controller: 'EditTaskCtrl',
+        authenticate: true
+      })
       .when('/home', {
         templateUrl: 'partials/home.html',
         authenticate: true

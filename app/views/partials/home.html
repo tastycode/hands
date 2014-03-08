@@ -11,15 +11,15 @@
       <th>{{task.title}}</th>
       <td>{{task.status}}</td>
       <td>
-        <button class="button">View</button>
-        <button class="button">Update</button>
-        <button class="button">Cancel</button>
+        <button class="button" ng-click="view(task)">View</button>
+        <button class="button" ng-click="update(task)">Update</button>
+        <button class="button" ng-click="cancel(task)">Cancel</button>
       </td>
     </div>
   </table>
   <div class="available-tasks-section" ng-if="userIs('volunteer')" ng-controller="AvailableTasksCtrl">
     <h1>Available Tasks</h1>
-    <p ng-hide="availableTasks.length">You have no posted tasks.</p>
+    <p ng-hide="availableTasks.length">There are no available tasks around you.</p>
     <table class="tasks tasks-available" ng-show="availableTasks.length">
       <tr class="task" ng-repeat="task in availableTasks">
         <th>{{task.title}}</th>
