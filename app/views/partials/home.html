@@ -1,34 +1,45 @@
 <div ng-controller="TasksCtrl">
-  <div class="section-header">
-    <h1>Posted Tasks</h1>
-    <div class="section-action">
-      <a class="button button-huge" href="/tasks/new">New Task</a>
-    </div> 
-  </div>
-  <p ng-hide="postedTasks.length">You have no posted tasks.</p>
-  <table class="tasks tasks-posted" ng-show="postedTasks.length">
-    <tr class="task" ng-repeat="task in postedTasks">
-      <th>{{task.title}}</th>
-      <td>{{task.status}}</td>
-      <td>
-        <button class="button" ng-click="view(task)">View</button>
-        <button class="button" ng-click="update(task)">Update</button>
-        <button class="button" ng-click="cancel(task)">Cancel</button>
-      </td>
+  <div class="posted-tasks-section" ng-if="userIs('poster')" ng-controller="PostedTasksCtrl">
+    <div class="section-header">
+      <h1>Posted Tasks</h1>
+      <div class="section-action">
+        <a class="button button-huge" href="/tasks/new">New Task</a>
+      </div> 
     </div>
-  </table>
+    <p ng-hide="postedTasks.length">You have no posted tasks.</p>
+    <table class="tasks tasks-posted" ng-show="postedTasks.length">
+      <div ng-repeat="task in postedTasks">
+        <div ng-include="'partials/tasks/_row'"/>
+      </div>
+    </table>
+  </div>
+  <div class="claimed-tasks-section" ng-if="userIs('volunteer')" ng-controller="ClaimedTasksCtrl">
+    <div class="section-header">
+      <h1>Claimed Tasks</h1>
+      <div class="section-action">
+        <a class="button button-huge" href="/tasks/new">New Task</a>
+      </div> 
+    </div>
+    <p ng-hide="postedTasks.length">You have no claimed tasks.</p>
+    <table class="tasks tasks-posted" ng-show="postedTasks.length">
+      <div ng-repeat="task in claimedTasks">
+        <div ng-include="'partials/tasks/_row'"/>
+      </div>
+    </table>
+  </div>
   <div class="available-tasks-section" ng-if="userIs('volunteer')" ng-controller="AvailableTasksCtrl">
     <h1>Available Tasks</h1>
     <p ng-hide="availableTasks.length">There are no available tasks around you.</p>
     <table class="tasks tasks-available" ng-show="availableTasks.length">
       <tr class="task" ng-repeat="task in availableTasks">
         <th>{{task.title}}</th>
-        <td>{{task.createdAt}}</td>
+        <td am-time-ago="task.createdAt"></td>
+        <td>{{task.d | number:2}}</td>
         <td>
-          <button class="button">View</button>
+          <button class="button" ng-click="view(task)">View</button>
+          <button class="button" ng-click="claim(task)">Claim</button>
         </td>
       </tr>
     </table>
   </div>
-  
 </div>

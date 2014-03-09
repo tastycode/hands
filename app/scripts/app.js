@@ -6,7 +6,8 @@ angular.module('handsApp', [
   'ngSanitize',
   'ngRoute',
   'ngAutocomplete',
-  'checklist-model'
+  'checklist-model',
+  'angularMoment'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
