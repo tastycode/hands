@@ -31,4 +31,11 @@ angular.module('handsApp')
         $scope.loadPostedTasks();
       });
     };
+
+    $scope.complete = function(task) {
+      task.status = 'completed';
+      $http.put('/api/tasks/' + task._id, task).success(function(task) {
+        $scope.loadClaimedTasks();
+      });
+    };
   });

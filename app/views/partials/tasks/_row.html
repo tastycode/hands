@@ -4,6 +4,7 @@
   <td>
     <button class="button" ng-click="view(task)">View</button>
     <button class="button" ng-click="update(task)">Update</button>
-    <button class="button" ng-click="cancel(task)">Cancel</button>
+    <button class="button" ng-click="cancel(task)" ng-if="task.status != 'canceled'">Cancel</button>
+    <button class="button" ng-click="complete(task)" ng-if="task.status === 'claimed'">Complete</button>
   </td>
 </tr>

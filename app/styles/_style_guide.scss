@@ -1,4 +1,4 @@
-
+@import 'mixins';
 /* headings n stuff */
 
 .h1 {
@@ -23,6 +23,11 @@
 }
 
 .h1 { letter-spacing: -1px; }
+
+a {
+  color: $blue;
+  text-decoration: none;
+}
 
 /* margin shortcuts */
 
@@ -193,5 +198,30 @@ a {
   }
 }
 
+/* tables */
 
+.table {
+  width: 100%;
+  thead tr td{
+    border-bottom: 1px solid $grey1;
+  }
+  th, td {
+    text-align: left;
+    &:last-child {
+      padding-top: 1em;
+      text-align: right;
+    }
+  }
+}
 
+/* buttons */
+
+.button {
+  @extend %button;
+  height: $medium-button-height;
+}
+
+.button-submit {
+  @extend %button;
+  @include linear-gradient($light-red, darken($light-red, 4%));
+}
