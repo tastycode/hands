@@ -4,6 +4,10 @@ angular.module('handsApp')
   .controller('TasksCtrl', function ($scope, $http, $location) {
     $scope.task = {};
 
+    $scope.go = function(path) {
+      $location.path(path);
+    };
+
     $scope.loadTasks = function(options) {
       return $http.get('/api/tasks', {params: options});
     }

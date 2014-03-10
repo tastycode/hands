@@ -1,9 +1,8 @@
 <div class="row">
   <h1>New Task</h1>
-  <pre>{{task | json}}</pre>
   <form ng-submit="createTask()">
     <div ng-include="'partials/tasks/_form'"></div>
-    <div class="full">
+    <div class="full tm-medium">
       <input type="submit" class="button button-submit" value="Request Task"/>
     </div>
   </form>

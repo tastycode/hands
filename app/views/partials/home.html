@@ -4,7 +4,7 @@
       <div class="section-header">
         <h1 class="h1">Posted Tasks</h1>
         <div class="section-action">
-          <a class="button button-huge" href="/tasks/new">New Task</a>
+          <button class="button" ng-click="go('/tasks/new')">New Task</button>
         </div> 
       </div>
       <p ng-hide="postedTasks.length">You have no posted tasks.</p>
