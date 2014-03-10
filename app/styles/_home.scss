@@ -47,6 +47,13 @@
 .marketing.row {
   padding-top: 3em;
   padding-bottom: 3em;
+  img {
+    width: 100%;
+    &:hover {
+      width: 102%;
+
+    }
+  }
   h3 {
     font-weight: $semibold_weight;
   }

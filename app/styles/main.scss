@@ -20,6 +20,11 @@ body {
     padding: 0.2em 0;
 }
 
+* {
+  transition: 0.2s all;
+}
+
+
 @import "header";
 @import "style_guide";
 @import "home";
