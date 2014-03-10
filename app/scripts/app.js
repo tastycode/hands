@@ -7,7 +7,8 @@ angular.module('handsApp', [
   'ngRoute',
   'ngAutocomplete',
   'checklist-model',
-  'angularMoment'
+  'angularMoment',
+  'angular-parallax'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

@@ -13,7 +13,8 @@
     "lodash": "~2.4.1",
     "ngAutocomplete": "*",
     "checklist-model": "~0.1.3",
-    "normalize.css": "~3.0.0"
+    "normalize.css": "~3.0.0",
+    "angular-parallax": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.11",

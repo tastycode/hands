@@ -1,6 +1,7 @@
 @import "mixins";
 .cover {
-  background-size: cover; 
+  background-size: cover !important;
+  background-repeat: no-repeat;
 }
 
 .hero {
@@ -40,13 +41,12 @@
 
 .helps.cover {
   background-image: url('/images/home/komal_helps.png');
-  height: 198px;
+  height: 400px;
 }
 
 
 .marketing.row {
-  padding-top: 3em;
-  padding-bottom: 3em;
+  padding-top: 1em;
   img {
     width: 100%;
     &:hover {
@@ -59,6 +59,8 @@
   }
   .copy {
     width: 25em;
+    font-weight: $light_weight;
+    line-height: 1.4;
   }
   .volunteers {
     margin-left: 10em;
@@ -76,7 +78,7 @@
   color: $white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   &.content {
-    padding-top: 8em;
+    padding-top: 12em;
   }
 }
 
