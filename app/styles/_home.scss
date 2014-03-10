@@ -1,0 +1,79 @@
+@import "mixins";
+.cover {
+  background-size: cover; 
+}
+
+.hero {
+  &.cover {
+    height: 452px;
+  }
+  &.cover.skyline {
+    background: url('/images/home/surreal_places_5898218494.png') no-repeat;
+ } 
+ &.content {
+   margin-left: auto;
+   margin-right: auto;
+   vertical-align: middle;
+   padding-top: 8em;
+   color: $white;
+ }
+ &.h1 {
+  font-family: $bitter_font;
+  font-weight: normal;
+  font-size: $fs3;
+ }
+ &.h2 {
+  font-weight: $light_weight;
+  font-size: $fs2;
+ }
+ &.button {
+  @include linear-gradient($blue, darken($blue, 4%));
+  text-transform: uppercase;
+  font-size: $fs1;
+ }
+}
+.cover.llama {
+  background-image: url('/images/home/dalai.png');
+  background-repeat: no-repeat;
+  height: 386px;
+}
+
+.helps.cover {
+  background-image: url('/images/home/komal_helps.png');
+  height: 198px;
+}
+
+
+.marketing.row {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  h3 {
+    font-weight: $semibold_weight;
+  }
+  .copy {
+    width: 25em;
+  }
+  .volunteers {
+    margin-left: 10em;
+  }
+}
+
+.figure.car {
+  width: 400px;
+  img {
+    width: 100%;
+  }
+}
+
+.llama {
+  color: $white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  &.content {
+    padding-top: 8em;
+  }
+}
+
+.attribution {
+  margin-top: $small-gap;
+  color: $grey3;
+}

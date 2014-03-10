@@ -15,7 +15,7 @@
 
 .h1, .h2 {
   line-height: 1.1;
-   margin: 1em 0 0.5em;
+  margin: 0;
 }
 
 .h3, .h4 {
@@ -27,6 +27,10 @@
 a {
   color: $blue;
   text-decoration: none;
+}
+
+.blue {
+  color: $blue;
 }
 
 /* margin shortcuts */
@@ -53,6 +57,17 @@ a {
 
 .lm-medium {
   margin-left: $medium-gap;
+}
+
+.lm-large {
+  margin-left: $large-gap;
+}
+
+.faded-blue {
+  color: lighten($blue, 5%);
+}
+.muted {
+  color: $grey5;
 }
 
 .lm-small {
@@ -82,6 +97,18 @@ a {
 .md {
   @include flexbox;
   @include align-items(flex-start);
+  &.vcenter {
+    @include align-items(center);
+  }
+}
+.md.reversed {
+  & > .md.figure {
+    order: 1;
+  }
+}
+
+.md-vcenter {
+  @include align-items(center);
 }
 
 .md-body {
@@ -169,6 +196,9 @@ input.inline-field {
 .text-center {
   text-align: center;
 }
+.text-right {
+  text-align: right;
+}
 
 .row {
   @include outer-container();
@@ -219,9 +249,17 @@ a {
 .button {
   @extend %button;
   height: $medium-button-height;
+  text-transform: uppercase;
+  &.huge {
+    height: $huge-button-height;
+  }
+  &.red {
+    @include linear-gradient($red, darken($red, 4%));
+  }
 }
 
 .button-submit {
   @extend %button;
   @include linear-gradient($light-red, darken($light-red, 4%));
 }
+
