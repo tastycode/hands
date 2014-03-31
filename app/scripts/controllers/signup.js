@@ -14,7 +14,7 @@ angular.module('handsApp')
       if (newVal) {
         $scope.user.location = {
           type: 'Point',
-          coordinates: [newVal.geometry.location.e, newVal.geometry.location.d],
+          coordinates: [newVal.geometry.location.lng(), newVal.geometry.location.lat()],
           text: $scope.autocomplete
         }
       } 

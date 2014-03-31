@@ -1,0 +1,22 @@
+<h1>Task Updates</h1>
+<h2>{{task.title}}</h2>
+<p>
+  {{task.location.text}}
+</p>
+
+<p>Your task has been marked as <strong>{{task.status}}</strong></p>
+
+{{#if task.claimedUser}}
+  <b>Dropoff User Info:</b>
+  <p>
+    {{task.claimedUser.name}}
+    {{task.claimedUser.location.text}}
+  </p>
+
+  <b>Dropoff Contact Info:</b>
+  <p>
+    {{task.claimedUser.name}}
+    {{task.claimedUser.phone}}
+  </p>
+{{/if}}
+

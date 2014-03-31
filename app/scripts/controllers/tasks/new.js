@@ -42,7 +42,7 @@ angular.module('handsApp')
       if (newVal && newVal.geometry) {
         $scope.task.originLocation = {
           type: 'Point',
-          coordinates: [newVal.geometry.location.e, newVal.geometry.location.d],
+          coordinates: [newVal.geometry.location.lng(), newVal.geometry.location.lat()],
           text: $scope.autoCompletes.origin.text
         }
       }

@@ -349,6 +349,7 @@ module.exports = function (grunt) {
           src: [
             'package.json',
             'server.js',
+            'worker.js',
             'lib/**/*'
           ]
         }]

@@ -1,0 +1,28 @@
+<h1>Task Request</h1>
+<h2>{{task.title}} ({{task.type}})</h2>
+
+<p>
+  <b>Task Time:</b>
+  <p>
+    {{task.finishBy}}
+  </p>
+</p>
+
+<b>Task Location:</b>
+<p>
+  {{task.postingUser.name}}
+  {{task.originLocation.text}}
+</p>
+
+{{#if task.destLocation}}
+<b>Task Destination:</b>
+<p>
+  {{task.destLocation.text}}
+</p>
+{{#/if}}
+
+<b>Task Contact Info:</b>
+<p>
+  {{task.postingUser.name}}
+  {{task.phone}}
+</p>

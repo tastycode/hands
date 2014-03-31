@@ -153,6 +153,11 @@ input.field, select.field, textarea.field {
   width: 100%;
 }
 
+
+.field.textarea {
+  min-height: 10ex;
+}
+
 input.inline-field.error {
   border-color: $red;
   &:last-child {
